@@ -17,8 +17,7 @@ function start () {
   app.disable('x-powered-by')
   app.use(enableCORS)
 
-  app.all('/req/:format', allOrigins.processRequest)
-
+  app.get('/', allOrigins.processRequest)
   app.listen(port)
   console.log('Listening on', port)
 }
